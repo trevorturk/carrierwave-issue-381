@@ -1,0 +1,11 @@
+https://github.com/jnicklas/carrierwave/issues/381
+
+bundle install
+rake db:migrate
+
+# small mirror is wrong
+foo = FooUploader.new
+foo.store! File.open('/Users/trevor/Downloads/archie.png')
+
+# small mirror is right
+foo = Foo.create! :foo => File.open('/Users/trevor/Downloads/archie.png')
