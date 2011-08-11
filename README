@@ -3,8 +3,8 @@ https://github.com/jnicklas/carrierwave/issues/381
 bundle install
 rake db:migrate
 
-# small mirror is wrong
-FooUploader.new.store! File.open('/Users/trevor/Downloads/archie.png')
+# reported good
+Foo.create! :foo => File.open(Rails.root + 'archie.png')
 
-# small mirror is right
-Foo.create! :foo => File.open('/Users/trevor/Downloads/archie.png')
+# reported bad
+FooUploader.new.store! File.open(Rails.root + 'archie.png')
