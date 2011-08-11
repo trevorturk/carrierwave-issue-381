@@ -4,8 +4,7 @@ bundle install
 rake db:migrate
 
 # small mirror is wrong
-foo = FooUploader.new
-foo.store! File.open('/Users/trevor/Downloads/archie.png')
+FooUploader.new.store! File.open('/Users/trevor/Downloads/archie.png')
 
 # small mirror is right
-foo = Foo.create! :foo => File.open('/Users/trevor/Downloads/archie.png')
+Foo.create! :foo => File.open('/Users/trevor/Downloads/archie.png')
